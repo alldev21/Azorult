@@ -1,0 +1,21 @@
+rule azorult
+    {
+            meta:
+                    author = "Aditya"
+                    date = "2021-09-06"
+                    
+                    
+            strings:
+  		    $string1 = "CookieList.txt"
+                    $string2 = "PasswordsList.txt"
+                    $string3 = "%s\\Ethereum\\keystore"
+		    $string4 = "FDIDestroy"
+		    $string5 = "FDICreate"
+                    $string6 = "Disables the This will install... Do you wish to continue? prompt"
+		    $string7 = "LetsSee!"
+		    
+		
+            condition:
+                    ($string1 and $string2 and $string3) or ($string4 and $string5 and $string7) or ($string6 and $string7)
+
+    }
